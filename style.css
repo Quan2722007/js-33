@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 120px;
+    gap: 150px;
     align-items: center;
 }
 
@@ -29,6 +29,7 @@ body {
     background-size: cover;
     transform: translateZ(-10px);
     top: 20%;
+    left: 6%;
 }
 .banner .Phuc img {
     width: 100%;
@@ -48,10 +49,10 @@ body {
 }
 @keyframes autoRun {
     from {
-        transform: perspective(1520px) rotateX(-16deg) rotateY(0deg);
+        transform: perspective(1500px) rotateX(-16deg) rotateY(0deg);
     }
     to {
-        transform: perspective(1520px) rotateX(-16deg) rotateY(360deg);
+        transform: perspective(1500px) rotateX(-16deg) rotateY(360deg);
     }
 }
 .banner .slide .item {
@@ -91,16 +92,27 @@ h1 {
         transform: rotateY(
                 calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
             )
-            translateZ(400px);
+            translateZ(450px);
+    }
+    @keyframes autoRun {
+        from {
+            transform: perspective(1200px) rotateX(-16deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(1200px) rotateX(-16deg) rotateY(360deg);
+        }
     }
 }
 @media only screen and (max-width: 1024px) {
+    body {
+        gap: 200px;
+    }
     .banner {
         width: 320px;
         height: 320px;
     }
     .banner .slide {
-        width: 100px;
+        width: 90px;
         height: 150px;
         left: 35%;
     }
@@ -108,39 +120,73 @@ h1 {
         transform: rotateY(
                 calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
             )
-            translateZ(350px);
+            translateZ(300px);
     }
     .banner .slide .item img {
         background-position: center top;
+    }
+    @keyframes autoRun {
+        from {
+            transform: perspective(900px) rotateX(-16deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(900px) rotateX(-16deg) rotateY(360deg);
+        }
     }
 }
 @media only screen and (max-width: 660px) {
     body {
         padding: 100px 0 0 0;
-        gap: 50px;
+        gap: 150px;
         background-position: calc(50% + 260px) center;
     }
     .banner {
-        width: 280px;
-        height: 260px;
+        width: 240px;
+        height: 240px;
     }
     .banner .slide {
         width: 60px;
-        height: 100px;
-        left: 36%;
+        height: 120px;
+        left: 38%;
     }
     .banner .slide .item {
         transform: rotateY(
                 calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
             )
-            translateZ(180px);
+            translateZ(185px);
     }
     h1 {
-        width: 70%;
+        width: 75%;
         text-align: center;
-        line-height: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
-    h1 span {
+    h1 .arrow {
         display: none;
+    }
+    @keyframes autoRun {
+        from {
+            transform: perspective(600px) rotateX(-20deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(600px) rotateX(-20deg) rotateY(360deg);
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    .banner .slide .item {
+        transform: rotateY(
+                calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+            )
+            translateZ(160px);
+    }
+    @keyframes autoRun {
+        from {
+            transform: perspective(500px) rotateX(-20deg) rotateY(0deg);
+        }
+        to {
+            transform: perspective(500px) rotateX(-20deg) rotateY(360deg);
+        }
     }
 }
